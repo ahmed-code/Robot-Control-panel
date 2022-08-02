@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>Robot movements: by ahmed</title>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div class="center">
+            <div>
+                <button class="button forward" onclick="Movement('F')">forward</button>
+            </div>
+            <div>
+                <button class="button Left" onclick="Movement('L')">Left</button>
+                <button class="button Stop" onclick="Movement('S')">Stop</button>
+                <button class="button Right" onclick="Movement('R')">Right</button>
+            </div>
+            <div>
+                <button class="button backward" onclick="Movement('B')">backward</button>
+            </div> 
+        </div>
+
+    </body>
+
+    <script>
+        function Movement(movement){
+            var url = 'robot_movement.php?data='+movement;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET' , url , false);
+            xhr.send();
+        }
+    </script>
+
+</html>
